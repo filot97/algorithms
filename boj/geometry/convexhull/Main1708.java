@@ -31,7 +31,7 @@ public class Main1708 {
 			int x = Integer.parseInt(st.nextToken());
 			int y = Integer.parseInt(st.nextToken());
 
-			pointSet.add(new Point(x, y, i));
+			pointSet.add(new Point(x, y));
 		}
 
 		Point basePoint = findBasePoint(pointSet);
@@ -94,13 +94,11 @@ public class Main1708 {
 
 class Point {
 	int x;
-	int y;
-	int index;
+	int y;	
 
-	public Point(int x, int y, int index) {
+	public Point(int x, int y) {
 		this.x = x;
-		this.y = y;
-		this.index = index;
+		this.y = y;		
 	}
 
 	public static int ccw(Point a, Point b, Point c) {
@@ -128,9 +126,7 @@ class Point {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Point other = (Point) obj;
-		if (index != other.index)
-			return false;
+		Point other = (Point) obj;		
 		if (x != other.x)
 			return false;
 		if (y != other.y)
